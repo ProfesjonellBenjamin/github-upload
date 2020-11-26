@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L2mY0JVF32ZQDdCIH/bCOqGOTl8i/skMCE56pYE3cxOYwn6OPOf2ALxi6nbFZQXdYKsBlLWI7xaw6MtsiQYVxg==",
+  "dgSpecHash": "YSwFp6FfeoD5fnMS3vybd1I67tZmIERcPU50hS+PBErScWLXx7PXEfQ/8GRxfWpFaDPEU/a/NrnRFmwOfKeMJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\benja\\OneDrive\\Desktop\\GamesApi\\GamesApi.csproj",
+  "projectFilePath": "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\GamesApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\benja\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
     "C:\\Users\\benja\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",

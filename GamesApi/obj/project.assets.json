@@ -4725,11 +4725,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\benja\\OneDrive\\Desktop\\GamesApi\\GamesApi.csproj",
+      "projectUniqueName": "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\GamesApi.csproj",
       "projectName": "GamesApi",
-      "projectPath": "C:\\Users\\benja\\OneDrive\\Desktop\\GamesApi\\GamesApi.csproj",
+      "projectPath": "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\GamesApi.csproj",
       "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\benja\\OneDrive\\Desktop\\GamesApi\\obj\\",
+      "outputPath": "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
