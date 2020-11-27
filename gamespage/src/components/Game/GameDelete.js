@@ -1,4 +1,3 @@
-import DeleteGames from "../views/DeleteGames";
 import axios from 'axios';
 
 const GameDelete = ( props ) => {

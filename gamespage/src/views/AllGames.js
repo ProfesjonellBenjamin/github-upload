@@ -1,40 +1,23 @@
 import {useState, useEffect} from 'react';
-import Game from '../components/Game';
+import GameItem from '../components/Game/GameItem';
 import axios from 'axios';
 
+import {GameProvider} from '../contexts/GameContext';
+import GameList from '../components/Game/GameList';
+import GamUpdate from '../components/Game/GameUpdate';
+import GameUpdate from '../components/Game/GameUpdate';
+
 const AllGames = () => {
-
-    const [games, setGames] = useState(
-        [ {id:"999", name: "Fish", price: "1000", image: "dracula.png"} 
-    ]);
-
-    useEffect( () => {
-        const url = "https://localhost:5001/Games";
-        axios.get( url )
-            .then(response => {
-                setGames(response.data);
-            })
-
-    },[])
-
-    const getGames = () => {
-
-        return games.map((game, i) => {
-            
-            return <Game key = {i} { ...game } ></Game>
-
-        })
-
-    }
 
 
     return (
 
             <section>
                 <h3>All Games</h3>
-
-                <p>Games.length: {games.length}</p>
-                { getGames()}
+                <GameProvider>
+                    <GameList></GameList>
+                    <GameUpdate></GameUpdate>
+                </GameProvider>
             </section>
 
     )

@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import Character from '../components/Character';
+import CharacterItem from '../components/Character/CharacterItem';
 import axios from 'axios';
 
 const AllCharacters = () => {
@@ -21,7 +21,7 @@ const AllCharacters = () => {
 
         return characters.map((character, i) => {
             
-            return <Character key = {i} { ...character } ></Character>
+            return <CharacterItem key = {i} { ...character } ></CharacterItem>
 
         })
 
@@ -33,7 +33,7 @@ const AllCharacters = () => {
             <section>
                 <h3>All Characters</h3>
 
-                <p>Characters.length: {characters.length}</p>
+                <p>characters.length: {characters.length}</p>
                 { getCharacters()}
             </section>
 

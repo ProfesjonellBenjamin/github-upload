@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import GameDelete from '../components/GameDelete';
+import GameDelete from '../components/Game/GameDelete';
 import axios from 'axios';
 
 

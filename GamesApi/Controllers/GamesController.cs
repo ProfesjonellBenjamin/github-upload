@@ -38,17 +38,19 @@ namespace GamesApi.Controllers{
             return NoContent();
         }
 
-        [HttpPut]
-        public IActionResult Put(Game gameIn){
-            var game = _gamesService.Get( gameIn.Id );
+        [HttpPut("{id:length(24)}")]
+        public IActionResult Put(string id, Game gameIn){
+            var selectedGame = _gamesService.Get( id );
 
-            if( game == null){
+            if( selectedGame == null){
                 return NotFound();
             }
 
-            _gamesService.Update( game );
+            _gamesService.Update( id, gameIn );
+
             return NoContent();
         }
+        
 
     }
 

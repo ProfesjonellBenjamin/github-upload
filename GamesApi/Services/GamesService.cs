@@ -28,8 +28,8 @@ namespace GamesApi.Services{
             _games.DeleteOne( game => game.Id == id );
         }
 
-        public void Update( Game gameIn ){
-            _games.ReplaceOne( game => game.Id == gameIn.Id, gameIn );
+        public void Update(string id, Game gameIn ){
+            _games.ReplaceOne( game => game.Id == id, gameIn );
         }
     }
 }

@@ -41,15 +41,15 @@ namespace GamesApi.Controllers{
             return NoContent();
         }
 
-        [HttpPut]
-        public IActionResult Put(Character characterIn){
-            var character = _charactersService.Get( characterIn.Id );
+        [HttpPut("{id:length(24)}")]
+        public IActionResult Put(string id, Character characterIn){
+            var selectedCharacter = _charactersService.Get( id );
 
-            if( character == null){
+            if( selectedCharacter == null){
                 return NotFound();
             }
 
-            _charactersService.Update( character );
+            _charactersService.Update( id, characterIn );
             return NoContent();
         }
 
