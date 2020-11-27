@@ -15,8 +15,6 @@ const GameUpdate = () => {
         
     }
 
-    
-
     return(
 
         <section>

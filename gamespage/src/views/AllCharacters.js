@@ -2,39 +2,21 @@ import {useState, useEffect} from 'react';
 import CharacterItem from '../components/Character/CharacterItem';
 import axios from 'axios';
 
-const AllCharacters = () => {
+import {CharacterProvider} from '../contexts/CharacterContext';
+import CharacterList from '../components/Character/CharacterList';
+import CharacterUpdate from '../components/Character/CharacterUpdate';
 
-    const [characters, setCharacters] = useState(
-        [ {id:"999", name: "Fish", description: "1000", image: "dracula.png"} 
-    ]);
-
-    useEffect( () => {
-        const url = "https://localhost:5001/Characters";
-        axios.get( url )
-            .then(response => {
-                setCharacters(response.data);
-            })
-
-    },[])
-
-    const getCharacters = () => {
-
-        return characters.map((character, i) => {
-            
-            return <CharacterItem key = {i} { ...character } ></CharacterItem>
-
-        })
-
-    }
+const AllGames = () => {
 
 
     return (
 
             <section>
                 <h3>All Characters</h3>
-
-                <p>characters.length: {characters.length}</p>
-                { getCharacters()}
+                <CharacterProvider>
+                    <CharacterList></CharacterList>
+                    <CharacterUpdate></CharacterUpdate>
+                </CharacterProvider>
             </section>
 
     )
@@ -42,4 +24,4 @@ const AllCharacters = () => {
 
 }
 
-export default AllCharacters;
+export default AllGames;

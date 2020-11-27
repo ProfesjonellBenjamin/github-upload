@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import {GameProvider} from '../contexts/GameContext';
 import GameList from '../components/Game/GameList';
-import GamUpdate from '../components/Game/GameUpdate';
 import GameUpdate from '../components/Game/GameUpdate';
 
 const AllGames = () => {
