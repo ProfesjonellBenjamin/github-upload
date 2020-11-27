@@ -49,8 +49,11 @@ namespace GamesApi
             services.AddSingleton<IGamesDatabaseSettings>(
                 sp => sp.GetRequiredService<IOptions<GamesDatabaseSettings>>().Value
             );
+            
+            services.AddSingleton<CharactersService>();
 
             services.AddSingleton<GamesService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
