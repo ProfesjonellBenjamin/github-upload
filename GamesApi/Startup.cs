@@ -29,7 +29,6 @@ namespace GamesApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
 
             services.AddCors(
                 options => { 
@@ -41,6 +40,8 @@ namespace GamesApi
                     );
                 }
             );
+            
+            services.AddControllers();
 
             services.Configure<GamesDatabaseSettings>(
                 Configuration.GetSection( nameof(GamesDatabaseSettings) )
@@ -66,10 +67,10 @@ namespace GamesApi
 
             app.UseCors("AllowAll");
 
-            app.UseStaticFiles();
-
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+ 
             app.UseRouting();
 
             app.UseAuthorization();
