@@ -1,7 +1,3 @@
-import {useState, useEffect} from 'react';
-import CharacterItem from '../components/Character/CharacterItem';
-import axios from 'axios';
-
 import {CharacterProvider} from '../contexts/CharacterContext';
 import CharacterList from '../components/Character/CharacterList';
 import CharacterUpdate from '../components/Character/CharacterUpdate';

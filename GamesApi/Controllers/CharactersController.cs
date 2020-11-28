@@ -5,9 +5,6 @@ using System.Collections.Generic;
 
 namespace GamesApi.Controllers{
 
-//ikke ferdig
-
-
     [ApiController]
     [Route("[controller]")]
     public class CharactersController : ControllerBase {
