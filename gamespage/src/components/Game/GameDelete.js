@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+
+
+//OUTDATED: moved to GameCreate
+
+
+
+
 const GameDelete = ( props ) => {
 
     const deleteGame = () =>{
@@ -7,7 +14,7 @@ const GameDelete = ( props ) => {
         const url = "https://localhost:5001/Games";
         
         axios.delete(`${url}/${props.id}`);
-
+        
     }
 
 

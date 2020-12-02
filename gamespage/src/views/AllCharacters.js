@@ -2,17 +2,19 @@ import {CharacterProvider} from '../contexts/CharacterContext';
 import CharacterList from '../components/Character/CharacterList';
 import CharacterUpdate from '../components/Character/CharacterUpdate';
 
-const AllGames = () => {
+const AllCharacters = () => {
 
 
     return (
 
             <section>
                 <h3>All Characters</h3>
+                
                 <CharacterProvider>
                     <CharacterList></CharacterList>
                     <CharacterUpdate></CharacterUpdate>
                 </CharacterProvider>
+
             </section>
 
     )
@@ -20,4 +22,4 @@ const AllGames = () => {
 
 }
 
-export default AllGames;
+export default AllCharacters;

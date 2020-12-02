@@ -4,6 +4,8 @@ import MainNavigation from '../components/MainNavigation';
 
 import AllCharacters from '../views/AllCharacters';
 import AllGames from '../views/AllGames';
+import AllImages from '../views/AllImages';
+
 import CreateGame from '../views/CreateGame';
 import DeleteGames from '../views/DeleteGames';
 
@@ -18,6 +20,8 @@ const Routes = () =>{
           <Route path="/create-game" component = {CreateGame}></Route>
           <Route path="/delete-game" component = {DeleteGames}></Route>
           <Route path="/all-characters" component = {AllCharacters}></Route>
+          <Route path="/all-images" component = {AllImages}></Route>
+
         </Switch>
         </BrowserRouter>
 

@@ -3,10 +3,17 @@ import GameDelete from '../components/Game/GameDelete';
 import axios from 'axios';
 
 
+
+//OUTDATED: moved to GameCreate
+
+
+
+
+
 const DeleteGames = () =>{
 
     const [games, setGames] = useState(
-        [ {id:"999", name: "Fish", price: "1000", image: "dracula.png"} 
+        [ {id:"0", name: "Fish", price: "1000", image: ""} 
     ]);
 
     useEffect( () => {

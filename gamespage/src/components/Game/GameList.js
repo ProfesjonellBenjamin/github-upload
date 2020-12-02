@@ -9,10 +9,11 @@ const GameList = () => {
 
         const [gamesState, setGames] = games;
 
-        const generateGames = () =>{
+        //searchState prop?
+
+        const generateGames = (filter) =>{
 
             return gamesState.map((game, i) => {
-
 
                 return <GameItem key={i} {...game}></GameItem>
             })
@@ -20,6 +21,9 @@ const GameList = () => {
 
         }
 
+        const filterGames = (e) =>{
+            return e.target.value;
+        }
 
         return (
 

@@ -4,12 +4,12 @@ export const GameContext = createContext();
 
 export const GameProvider = (props) => {
 
-    const [game, setGame] = useState({id: "0", name: "9/11 RPG", price: 0, image: "frankenstein.png"})
+    const [game, setGame] = useState({id: "0", name: "", price: 0, image: ""})
 
     const [games, setGames] = useState([
-        {id: "1", name: "GTA Helstrøm rydder opp", price: 0, image: "frankenstein.png"},
-        {id: "2", name: "GTA Helstrøm rydder opp 2", price: 0, image: "frankenstein.png"},
-        {id: "3", name: "GTA Helstrøm rydder opp 3 nå rydder du opp", price: 0, image: "frankenstein.png"}
+        {id: "0", name: "GTA Helstrøm rydder opp", price: 0, image: ""},
+        {id: "0", name: "GTA Helstrøm rydder opp 2 på tide å rydde opp", price: 0, image: ""},
+        {id: "0", name: "GTA Helstrøm rydder opp 3 nå rydder du opp", price: 0, image: ""}
     ]);
 
     useEffect( () => {

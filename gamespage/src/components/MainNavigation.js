@@ -12,6 +12,8 @@ const MainNavigation = () =>{
                     <Nav.Link as={Link} to ="/create-game">Create Game</Nav.Link>
                     <Nav.Link as={Link} to ="/delete-game">Delete Game</Nav.Link>
                     <Nav.Link as={Link} to="/all-characters">Characters</Nav.Link>
+                    <Nav.Link as={Link} to="/all-images">Images</Nav.Link>
+
                 </Nav>
 
             </Navbar.Brand>
