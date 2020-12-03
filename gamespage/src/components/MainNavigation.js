@@ -1,24 +1,36 @@
-import { Nav, Navbar, NavbarBrand } from 'react-bootstrap';
+import { Nav, Navbar, NavbarBrand, NavDropdown,Container } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 const MainNavigation = () =>{
 
     return (
 
-        <Navbar>
-            <Navbar.Brand>
-                <Nav>
-                    <Nav.Link as={Link} to="/">Games</Nav.Link>
-                    <Nav.Link as={Link} to ="/create-game">Create Game</Nav.Link>
-                    <Nav.Link as={Link} to ="/delete-game">Delete Game</Nav.Link>
-                    <Nav.Link as={Link} to="/all-characters">Characters</Nav.Link>
-                    <Nav.Link as={Link} to="/all-images">Images</Nav.Link>
+  
 
-                </Nav>
+<Navbar bg="dark" variant="dark">
+<Navbar.Brand as={Link} to="/">Gamestore</Navbar.Brand>
+<Navbar.Collapse id="basic-navbar-nav">
+    <Nav className='m-auto'>
+        <Nav.Link as={Link} to="/games">Games</Nav.Link>
+        <Nav.Link as={Link} to="/characters">Characters</Nav.Link>
+        <Nav.Link as={Link} to ="/delete-game">Delete Game</Nav.Link> 
+        <Nav.Link as={Link} to ="/create-game">Create Game</Nav.Link>  
+        <Nav.Link as={Link} to="/all-images">Images</Nav.Link>
+    </Nav>
+    
+    <Nav className="mr-sm-5">
+        
+    <NavDropdown title="Admin">
+        <NavDropdown.Item as={Link} to="/all-games">Games</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/all-characters">Characters</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/all-images">Images</NavDropdown.Item>
+    </NavDropdown>
+  
+    </Nav>
+    </Navbar.Collapse>
+    
+</Navbar>
 
-            </Navbar.Brand>
-
-        </Navbar>
 
 
     )

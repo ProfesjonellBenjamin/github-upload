@@ -4,22 +4,13 @@ import { Col, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Image from 'react-bootstrap/Image'
 
-const GameItem = ( {id, name, price, image} ) => {
+const NewGameItem = ( {id, name, price, image} ) => {
 
     const { game } = useContext(GameContext);
     const [gameState, setGame] = game;
 
-    const setSelectedGame = () =>{
-        setGame({id: id, name: name, price: price, image: image});
-    }
+   
 
-    const deleteGame = () =>{
-
-        const url = "https://localhost:5001/Games";
-        
-        axios.delete(`${url}/${id}`);
-
-    }
     
     return (
 
@@ -31,8 +22,7 @@ const GameItem = ( {id, name, price, image} ) => {
             <Card.Title as="h4">{name}</Card.Title>
             <Card.Text>{price},- </Card.Text>
         </Card.Body>
-        <Button onClick={setSelectedGame}>Update</Button>
-        <Button onClick={deleteGame}>Delete</Button>
+        <Button >Read More!</Button>
     </Card>
 </Col>
     
@@ -45,4 +35,4 @@ const GameItem = ( {id, name, price, image} ) => {
 
 }
 
-export default GameItem;
+export default NewGameItem;

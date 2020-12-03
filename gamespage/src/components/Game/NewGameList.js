@@ -1,9 +1,9 @@
 import {Row} from 'react-bootstrap';
 import {useContext} from 'react';
 import {GameContext} from '../../contexts/GameContext';
-import GameItem from './GameItem';
+import NewGameItem from './NewGameItem';
 
-const GameList = () => {
+const NewGameList = () => {
 
         const { games } = useContext( GameContext );
 
@@ -15,7 +15,7 @@ const GameList = () => {
 
             return gamesState.map((game, i) => {
 
-                return <GameItem key={i} {...game}></GameItem>
+                return <NewGameItem key={i} {...game}></NewGameItem>
             })
 
 
@@ -38,4 +38,4 @@ const GameList = () => {
         )
 }
 
-export default GameList;
+export default NewGameList;
