@@ -2,6 +2,7 @@ import { GameContext } from "../../contexts/GameContext";
 import {useContext} from 'react';
 import { Col, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
+import Image from 'react-bootstrap/Image'
 
 const GameItem = ( {id, name, price, image} ) => {
 
@@ -33,20 +34,21 @@ const GameItem = ( {id, name, price, image} ) => {
     
     return (
 
-            <Col>
-                <Card>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Body>
-                        <Card.Text>{price}</Card.Text>
-                        <img src={`https://localhost:5001/images/${image}`}/>
-                    </Card.Body>
-                    <Button onClick={setSelectedGame}>Update</Button>
-                    <Button onClick={deleteGame}>Delete</Button>
-                </Card>
-            
-            </Col>
 
+<Col xs={ 12 } sm={ 6 } md={ 4 } lg={ 3 } xl={ 2 }> 
+    <Card style={{ width:'15rem', height:'25rem' }}>
+    <Image style={{ height:'15rem' }} variant ="top" src={`https://localhost:5001/images/${image}`} thumbnail />
+        <Card.Body>
+            <Card.Title as="h4">{name}</Card.Title>
+            <Card.Text>{price},- </Card.Text>
+        </Card.Body>
+        <Button onClick={setSelectedGame}>Update</Button>
+        <Button onClick={deleteGame}>Delete</Button>
+    </Card>
+</Col>
+    
 
+ 
 
     )
 

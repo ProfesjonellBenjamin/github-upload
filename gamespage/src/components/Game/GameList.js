@@ -38,7 +38,9 @@ const GameList = () => {
                 <input onChange={filterGames} type="text"></input>
                 {/* dropdown ps / xbox / both */}
                 {/* dropdown sjanger? */}
-                <Row>
+                
+
+                <Row xl={ 6 }>
                     {generateGames()}
                 </Row>
             </section>
