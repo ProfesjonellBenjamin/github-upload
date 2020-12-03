@@ -7,6 +7,7 @@ import {GameContext} from '../../contexts/GameContext';
 import ImageList from '../Image/ImageList';
 import ImageUploader from '../Image/ImageUploader';
 import ImageUpdate from '../Image/ImageUpdate';
+import Games from '../../views/Games';
 
 const GameCreate = () => {
 
@@ -37,6 +38,10 @@ const GameCreate = () => {
             case "image":
                 //setImage(e.target.value);
                 break;
+            case "console":
+                setGame({...gameState, console: e.target.value});
+            case "description":
+                setGame({...gameState, description: e.target.value});
             default:
         }
     }
@@ -52,7 +57,8 @@ const GameCreate = () => {
     const createGame = () =>{
         alert("Creating " + gameState.name + ", press f5 to see changes");
         const url = "https://localhost:5001/Games";
-        const newGame = {name: gameState.name, price: gameState.price, image: gameState.image};
+        const newGame = {name: gameState.name, price: gameState.price, image: gameState.image, 
+            console: gameState.console, description: gameState.description};
 
         axios.post(url, newGame);
     }
@@ -71,7 +77,7 @@ const GameCreate = () => {
 
     const clearFields = () =>{
 
-        setGame({id: "0", name: "", price: 0, image: ""});
+        setGame({id: "0", name: "", price: 0, image: "", console: "", description: ""});
 
     }
 
@@ -102,7 +108,11 @@ const GameCreate = () => {
             <input id="price" onChange={ handleChange } type="text" value = {gameState.price}/>
             <label>Image</label>
             <img id="image" src={`https://localhost:5001/images/${gameState.image}`}/>
-
+            <label>Console</label>
+            {/* skal være dropdown */}
+            <input id="console" onChange={handleChange} type="text" value = {gameState.console} ></input>
+            <label>Description</label>
+            <input id="description" onChange={handleChange} type="text" value = {gameState.description}></input>
 
 
 
