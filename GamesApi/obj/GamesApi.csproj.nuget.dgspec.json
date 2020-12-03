@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dominic\\Desktop\\github-upload\\GamesApi\\GamesApi.csproj": {}
+    "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\GamesApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dominic\\Desktop\\github-upload\\GamesApi\\GamesApi.csproj": {
+    "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\GamesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dominic\\Desktop\\github-upload\\GamesApi\\GamesApi.csproj",
+        "projectUniqueName": "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\GamesApi.csproj",
         "projectName": "GamesApi",
-        "projectPath": "C:\\Users\\Dominic\\Desktop\\github-upload\\GamesApi\\GamesApi.csproj",
-        "packagesPath": "C:\\Users\\Dominic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dominic\\Desktop\\github-upload\\GamesApi\\obj\\",
+        "projectPath": "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\GamesApi.csproj",
+        "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\benja\\Desktop\\GamesPage_Workspace\\GamesApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dominic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +41,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MongoDB.Driver": {
               "target": "Package",
@@ -61,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

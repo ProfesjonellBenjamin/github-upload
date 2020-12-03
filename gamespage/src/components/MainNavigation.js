@@ -13,10 +13,7 @@ const MainNavigation = () =>{
     <Nav className='m-auto'>
         <Nav.Link as={Link} to="/games">Games</Nav.Link>
         <Nav.Link as={Link} to="/characters">Characters</Nav.Link>
-        <Nav.Link as={Link} to ="/delete-game">Delete Game</Nav.Link> 
-        <Nav.Link as={Link} to ="/create-game">Create Game</Nav.Link>  
-        <Nav.Link as={Link} to="/all-images">Images</Nav.Link>
-    </Nav>
+           </Nav>
     
     <Nav className="mr-sm-5">
         

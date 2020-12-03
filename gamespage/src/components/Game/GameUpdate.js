@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-//OUTDATED
+//OUTDATED: moved to gameCreate
 
 
 
