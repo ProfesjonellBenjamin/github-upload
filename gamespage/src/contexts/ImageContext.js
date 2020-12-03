@@ -22,9 +22,8 @@ export const ImageProvider = (props) => {
     },[]);
 
     //how to reference method in context/provider
-    const getImages = () => {
-        return "hei";
-        
+    function getImages() {
+        alert("hei");
     }
         
     
@@ -38,4 +37,6 @@ export const ImageProvider = (props) => {
 
 }
 
-export const test = 10;
+export function test (){
+    alert("hei");
+}

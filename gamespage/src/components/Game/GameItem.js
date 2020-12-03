@@ -8,6 +8,9 @@ const GameItem = ( {id, name, price, image} ) => {
     const { game } = useContext(GameContext);
     const [gameState, setGame] = game;
 
+    const { games } = useContext(GameContext);
+    const [gamesState, setGames] = games;
+
     const setSelectedGame = () =>{
         setGame({id: id, name: name, price: price, image: image});
     }
@@ -15,9 +18,17 @@ const GameItem = ( {id, name, price, image} ) => {
     const deleteGame = () =>{
 
         const url = "https://localhost:5001/Games";
-        
+        alert("before delete");
         axios.delete(`${url}/${id}`);
 
+        alert("before get");
+        //finner ikke bedre måte, re-rendrer ved dobbeltklikk, men med feilmelding 404
+        axios.get( url )
+            .then(response => {
+                setGames(response.data);
+            });
+
+        alert("after get");
     }
     
     return (

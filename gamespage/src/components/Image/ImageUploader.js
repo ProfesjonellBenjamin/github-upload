@@ -9,6 +9,10 @@ const ImageUploader = () => {
     const [imageFile, setImageFile] = useState({});
 
     const {image} = useContext(ImageContext);
+    const {images} = useContext(ImageContext);
+
+    const [imagesState, setImages] = images;
+
     const context = useContext(ImageContext);
 
     const [selectedImage, setSelectedImage] = image;
@@ -33,12 +37,13 @@ const ImageUploader = () => {
         config: { headers: {"Content-Type": "multipart/form-data"} }
       });
 
-      //update images
-
-      //var val = document.getElementById('filePicker').value.replace("C:\\fakepath\\", "");
-      //setSelectedImage({filePath: val});
-      //re-render and get?
-      
+      //update images, works if you press button twice
+      const url = "https://localhost:5001/ImageUpload";
+      axios.get( url )
+            .then(response => {
+                setImages(response.data);
+              });
+              
     }
     
     useEffect( () => {

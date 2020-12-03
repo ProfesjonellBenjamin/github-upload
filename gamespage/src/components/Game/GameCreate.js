@@ -50,7 +50,7 @@ const GameCreate = () => {
     }
     
     const createGame = () =>{
-        alert("Creating " + gameState.name + " f5 to see changes");
+        alert("Creating " + gameState.name + ", press f5 to see changes");
         const url = "https://localhost:5001/Games";
         const newGame = {name: gameState.name, price: gameState.price, image: gameState.image};
 
@@ -58,7 +58,7 @@ const GameCreate = () => {
     }
 
     const updateGame = () =>{
-        alert("Updating " + gameState.name + " f5 to see changes");
+        alert("Updating " + gameState.name + ", press f5 to see changes");
         //alert("update instead: " + gameState.id);
         const url = "https://localhost:5001/Games";
         axios.put(`${url}/${gameState.id}`, gameState);

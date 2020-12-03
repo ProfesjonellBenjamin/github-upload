@@ -1,5 +1,5 @@
 import {Row} from 'react-bootstrap';
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {GameContext} from '../../contexts/GameContext';
 import GameItem from './GameItem';
 
@@ -9,20 +9,25 @@ const GameList = () => {
 
         const [gamesState, setGames] = games;
 
+        const [filter, setFilter] = useState("");
+
+
         //searchState prop?
 
-        const generateGames = (filter) =>{
+        const generateGames = () =>{
 
-            return gamesState.map((game, i) => {
-
+            return gamesState.filter(obj => obj.name.includes(filter)).map((game, i) => {
+                //alert(game.name);
                 return <GameItem key={i} {...game}></GameItem>
-            })
+                }
+            
+            )
 
 
         }
 
         const filterGames = (e) =>{
-            return e.target.value;
+            setFilter(e.target.value);
         }
 
         return (
@@ -30,7 +35,9 @@ const GameList = () => {
 
             <section>
                 <h3>Game-List</h3>
-
+                <input onChange={filterGames} type="text"></input>
+                {/* dropdown ps / xbox / both */}
+                {/* dropdown sjanger? */}
                 <Row>
                     {generateGames()}
                 </Row>
