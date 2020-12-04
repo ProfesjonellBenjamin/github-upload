@@ -1,6 +1,9 @@
 import {CharacterProvider} from '../contexts/CharacterContext';
+import {GameProvider} from '../contexts/GameContext';
 import CharacterList from '../components/Character/CharacterList';
-import CharacterUpdate from '../components/Character/CharacterUpdate';
+import {ImageProvider} from '../contexts/ImageContext';
+import CharacterCreate from '../components/Character/CharacterCreate';
+import GameCreate from '../components/Game/GameCreate';
 
 const AllCharacters = () => {
 
@@ -12,7 +15,12 @@ const AllCharacters = () => {
                 
                 <CharacterProvider>
                     <CharacterList></CharacterList>
-                    <CharacterUpdate></CharacterUpdate>
+                    <ImageProvider>
+                        <CharacterCreate></CharacterCreate>
+                        
+
+
+                    </ImageProvider>
                 </CharacterProvider>
 
             </section>

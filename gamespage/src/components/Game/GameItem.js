@@ -2,7 +2,8 @@ import { GameContext } from "../../contexts/GameContext";
 import {useContext, useState} from 'react';
 import { Col, Card, Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const GameItem = ( {id, name, price, image, console, description} ) => {
 
@@ -35,11 +36,7 @@ const GameItem = ( {id, name, price, image, console, description} ) => {
     const handleClose = () => {
       
       setShow(false);
-      //send data to parent here?
-      
-      //setImage(imageState);
-      //setGame( {...gameState, image: imageState.filePath});      //setImage(imageState);
-      //alert(imageState.filePath);
+
   
     }
 
@@ -55,26 +52,24 @@ const GameItem = ( {id, name, price, image, console, description} ) => {
             <Card.Title as="h4">{name}</Card.Title>
             <Card.Text>{price},- </Card.Text>
             <Card.Text>{console}</Card.Text>
-            <Card.Text>{description}</Card.Text>
         </Card.Body>
-        <Button onClick={readMore}>Read More!</Button>
-        <Button onClick={setSelectedGame}>Update</Button>
-        <Button onClick={deleteGame}>Delete</Button>
+        <ButtonGroup aria-label="Basic example">
+            <Button variant="secondary" onClick={readMore}>Read More</Button>
+            <Button variant="secondary" onClick={setSelectedGame}>Edit</Button>
+            <Button variant="secondary" onClick={deleteGame}>Delete</Button>
+        </ButtonGroup>
     </Card>
 
     <Modal animation={false} size="lg" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                <Modal.Title>React Bootstrap Modal Example - ItSolutionStuff.com</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     
-                    <Card style={{ width:'15rem', height:'28rem' }}>
-                    <Image style={{ height:'15rem' }} variant ="top" src={`https://localhost:5001/images/${image}`} thumbnail />
+                <Card className ="m-auto" style={{ width:'30rem', height:'28rem' }}>
+                            <Image style={{ height:'15rem' }} variant ="top" src={`https://localhost:5001/images/${image}`} thumbnail />
                         <Card.Body>
-                            <Card.Title as="h4">{name}</Card.Title>
-                            <Card.Text>{price},- </Card.Text>
-                            <Card.Text>{console}</Card.Text>
-                            <Card.Text>{description}</Card.Text>
+                            <Card.Title as="h4" className="center">{name}</Card.Title>
+                             <Card.Text>{description}</Card.Text>
                         </Card.Body>
                     </Card>
 

@@ -16,7 +16,7 @@ const NewCharacterItem = ( {id, name, description, image} ) => {
     <Image style={{ height:'15rem' }} variant ="top" src={`https://localhost:5001/images/${image}`} thumbnail />
         <Card.Body>
             <Card.Title as="h4">{name}</Card.Title>
-            <Card.Text>{description},- </Card.Text>
+            <Card.Text>{description}</Card.Text>
         </Card.Body>
         <Button >Read More!</Button>
     </Card>

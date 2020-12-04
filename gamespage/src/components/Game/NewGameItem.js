@@ -4,7 +4,7 @@ import { Col, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Image from 'react-bootstrap/Image'
 
-const NewGameItem = ( {id, name, price, image} ) => {
+const NewGameItem = ( {id, name, price, image, console, description} ) => {
 
     const { game } = useContext(GameContext);
     const [gameState, setGame] = game;

@@ -4,12 +4,12 @@ export const CharacterContext = createContext();
 
 export const CharacterProvider = (props) => {
 
-    const [character, setCharacter] = useState({id: "0", name: "9/11 RPG", description: "a", image: "frankenstein.png"})
+    const [character, setCharacter] = useState({id: "0", name: "", description: "", image: ""})
 
     const [characters, setCharacters] = useState([
-        {id: "1", name: "GTA Helstrøm rydder opp", description: "b", image: "frankenstein.png"},
-        {id: "2", name: "GTA Helstrøm rydder opp 2", description: "c", image: "frankenstein.png"},
-        {id: "3", name: "GTA Helstrøm rydder opp 3 nå rydder du opp", description: "d", image: "frankenstein.png"}
+        {id: "0", name: "GTA Helstrøm rydder opp", description: "b", image: ""},
+        {id: "0", name: "GTA Helstrøm rydder opp 2", description: "c", image: ""},
+        {id: "0", name: "GTA Helstrøm rydder opp 3 nå rydder du opp", description: "d", image: ""}
     ]);
 
     useEffect( () => {

@@ -1,13 +1,11 @@
 import {useState, useContext} from 'react';
-import { Button, Modal} from 'react-bootstrap';
+import { Button, Modal, Row, Col, Container} from 'react-bootstrap';
 import axios from 'axios';
-import ModalPopup from '../ModalPopup';
 import {ImageContext, ImageProvider} from '../../contexts/ImageContext';
 import {GameContext} from '../../contexts/GameContext';
 import ImageList from '../Image/ImageList';
 import ImageUploader from '../Image/ImageUploader';
-import ImageUpdate from '../Image/ImageUpdate';
-import Games from '../../views/Games';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const GameCreate = () => {
 
@@ -40,8 +38,10 @@ const GameCreate = () => {
                 break;
             case "console":
                 setGame({...gameState, console: e.target.value});
+                break;
             case "description":
                 setGame({...gameState, description: e.target.value});
+                break;
             default:
         }
     }
@@ -69,11 +69,7 @@ const GameCreate = () => {
         const url = "https://localhost:5001/Games";
         axios.put(`${url}/${gameState.id}`, gameState);
 
-        
-
     }
-
-    
 
     const clearFields = () =>{
 
@@ -87,49 +83,120 @@ const GameCreate = () => {
     const handleClose = () => {
       
       setShow(false);
-      //send data to parent here?
       
       setImage(imageState);
       setGame( {...gameState, image: imageState.filePath});      //setImage(imageState);
-      //alert(imageState.filePath);
   
     }
     
     const handleShow = () => setShow(true);
      
+    //klønete
+    const setConsole = (e) =>{
+
+        //alert(e.target.id + " was pressed");
+        switch(e.target.id){
+            case "xb":
+                //alert("XBAX");
+                setGame({...gameState, console: "Xbox"});
+                break;
+            case "ps":
+                setGame({...gameState, console: "PlayStation"});
+                break;
+            default:
+
+
+
+        }
+
+    } 
 
 
     return (
         <section>
-            <h3>Create or edit Game</h3>
-            <label>Name</label>
-            <input id="name" onChange={ handleChange } type="text" value = {gameState.name}/>
-            <label>Price</label>
-            <input id="price" onChange={ handleChange } type="text" value = {gameState.price}/>
-            <label>Image</label>
-            <img id="image" src={`https://localhost:5001/images/${gameState.image}`}/>
-            <label>Console</label>
-            {/* skal være dropdown */}
-            <input id="console" onChange={handleChange} type="text" value = {gameState.console} ></input>
-            <label>Description</label>
-            <input id="description" onChange={handleChange} type="text" value = {gameState.description}></input>
+            
+            <Container xs={8} sm={4} md={4} lg={4}>
+                    <Row>
+                        <h3>Create or edit Game</h3>
+                    </Row>
+                    <Row >
+                        <Col xs={2} sm={2} md={2} lg={2}>
+                        <label>Name</label>
+                        <input id="name" onChange={ handleChange } type="text" value = {gameState.name}/>
+                        </Col>
+
+                        <Col xs={2} sm={2} md={2} lg={2}>
+                        <label>Price</label>
+                        <input id="price" onChange={ handleChange } type="text" value = {gameState.price}/>
+
+                        </Col>
+
+                    </Row>
+                    <Row>
+                    <Col xs={2} sm={2} md={2} lg={2}>
+                        {/*dropdown works most of the time */}
+                        <Dropdown>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            Console
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item><div id="xb" onClick={setConsole} value="Xbox">Xbox</div></Dropdown.Item>
+                                <Dropdown.Item><div id="ps" onClick={setConsole} value="PlayStation">PlayStation</div></Dropdown.Item>
+                        </Dropdown.Menu>
+                        </Dropdown>
+                        
+                    </Col>
+                    <Col><div>{gameState.console}</div></Col>
+
+                    </Row>
+                    <Row><label>Description</label></Row>
+                    <Row>
+                        <Col>
+                        
+        
+                        
+                        <textarea id="description" onChange={handleChange} type="text" value = {gameState.description}></textarea>
+
+                        </Col>
+                    </Row>
+                    <Row>
+                    <Col>
+                            <img id="image" src={`https://localhost:5001/images/${gameState.image}`}/>
+                            
+                        </Col>
+                    </Row>     
+                    <Row>
+                    <Button variant="primary" onClick={handleShow}>
+                                Pick Image
+                            </Button>
+                            <Col xs={2} sm={2} md={2} lg={2}>
+                        <input onClick={createOrUpdate} type="button" value="Save"/>
+                    
+                        <input onClick={clearFields} type="button" value="Clear"/>
+
+                    </Col>
+                    </Row>   
+
+                    <Row>
+                    
+                    </Row>
+            </Container>
+            
 
 
 
-            <Button variant="primary" onClick={handleShow}>
-                Choose Image
-            </Button>
+            
         
             <Modal animation={false} size="lg" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                <Modal.Title>React Bootstrap Modal Example - ItSolutionStuff.com</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
 
                     <ImageUploader/>
                     
                     <ImageList></ImageList>
-                    <label>You have picked: {imageState.image}</label>
+                    <label>You have picked: {imageState.filePath}</label>
 
 
                 </Modal.Body>
@@ -140,8 +207,7 @@ const GameCreate = () => {
                 </Button>
                 </Modal.Footer>
             </Modal>
-            <input onClick={createOrUpdate} type="button" value="Save"/>
-            <input onClick={clearFields} type="button" value="Clear"/>
+
 
         </section>
 

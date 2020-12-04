@@ -20,7 +20,6 @@ const MainNavigation = () =>{
     <NavDropdown title="Admin">
         <NavDropdown.Item as={Link} to="/all-games">Games</NavDropdown.Item>
         <NavDropdown.Item as={Link} to="/all-characters">Characters</NavDropdown.Item>
-        <NavDropdown.Item as={Link} to="/all-images">Images</NavDropdown.Item>
     </NavDropdown>
   
     </Nav>
